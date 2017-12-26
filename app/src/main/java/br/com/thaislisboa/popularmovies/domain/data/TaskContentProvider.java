@@ -10,7 +10,9 @@ import android.net.Uri;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 
-import static br.com.thaislisboa.popularmovies.domain.data.Constantes.TABLE_NAME;
+import br.com.thaislisboa.popularmovies.domain.model.Movie;
+
+
 import static br.com.thaislisboa.popularmovies.domain.data.Constantes.TASKS;
 
 public class TaskContentProvider extends ContentProvider {
@@ -55,7 +57,7 @@ public class TaskContentProvider extends ContentProvider {
             switch (match) {
                 // Query for the tasks directory
                 case TASKS:
-                    retCursor =  db.query(TABLE_NAME,
+                    retCursor =  db.query(Movie.TABLE_NAME,
                             projection,
                             selection,
                             selectionArgs,
@@ -97,7 +99,7 @@ public class TaskContentProvider extends ContentProvider {
         switch (match) {
             case FAVORITES:
 
-                long id = db.insert(TABLE_NAME, null, values);
+                long id = db.insert(Movie.TABLE_NAME, null, values);
 
                 if (id > 0) {
 
