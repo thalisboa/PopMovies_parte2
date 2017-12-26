@@ -10,6 +10,9 @@ import android.net.Uri;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 
+import static br.com.thaislisboa.popularmovies.domain.data.Constantes.TABLE_NAME;
+import static br.com.thaislisboa.popularmovies.domain.data.Constantes.TASKS;
+
 public class TaskContentProvider extends ContentProvider {
 
     public static final int FAVORITES = 100;
@@ -73,7 +76,7 @@ public class TaskContentProvider extends ContentProvider {
         }
 
 
-    }
+
 
     @Nullable
     @Override

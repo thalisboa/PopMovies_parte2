@@ -23,7 +23,7 @@
             android:paddingTop="20dp"
             android:text="Title"
             android:textColor="@android:color/white"
-            android:onClick="onClickAddFavorite"
+
             android:textSize="30sp" />
 
 
