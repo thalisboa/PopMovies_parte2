@@ -4,6 +4,15 @@ import java.io.Serializable;
 import java.util.ArrayList;
 
 public class Movie implements Serializable {
+    //Tabela e campos
+    public static final String TABLE_NAME ="movie";
+    public static final String ID_FILME = "id_filme";
+    public static final String NOTA="nota";
+    public static final String TITULO="titulo";
+    public static final String IMAGEM ="imagem";
+    public static final String USERVIEW="userview";
+    public static final String DATA ="data";
+
     private long id;
     private boolean video;
     private double voteAverage;
