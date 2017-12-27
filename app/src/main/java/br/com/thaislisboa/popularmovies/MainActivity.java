@@ -31,6 +31,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
+import br.com.thaislisboa.popularmovies.domain.Dao.FavoriteListDao;
 import br.com.thaislisboa.popularmovies.domain.model.Movie;
 
 public class MainActivity extends AppCompatActivity {
@@ -67,6 +68,14 @@ public class MainActivity extends AppCompatActivity {
         } catch (Exception cause) {
             Log.e("MV", cause.getMessage(), cause);
         }
+
+        FavoriteListDao favoriteListDao = new FavoriteListDao(
+                getBaseContext()
+        );
+
+        Movie movie = new Movie();
+        favoriteListDao.InsertFavorite(movie);
+
     }
 
     private void updateList()

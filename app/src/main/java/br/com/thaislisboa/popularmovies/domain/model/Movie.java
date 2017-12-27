@@ -15,6 +15,9 @@ public class Movie implements Serializable {
     private ArrayList<Trailer> trailers;
     public ArrayList<Review> reviews;
 
+    public Movie() {
+    }
+
     public Movie(long id, boolean video, double voteAverage,
                  String title, String poster, String backdrop, String overview, String date) {
         this.id = id;
@@ -41,15 +44,15 @@ public class Movie implements Serializable {
         return voteAverage;
     }
 
-    public String getGrade() {
+    public static String getGrade() {
         return String.format("%s/10", getVoteAverage());
     }
 
-    public String getTitle() {
+    public static String getTitle() {
         return title;
     }
 
-    public String getPoster() {
+    public static String getPoster() {
         return "http://image.tmdb.org/t/p/w780/".concat(poster);
     }
 
@@ -57,7 +60,7 @@ public class Movie implements Serializable {
         return "http://image.tmdb.org/t/p/w342/".concat(backdrop);
     }
 
-    public String getOverview() {
+    public static String getOverview() {
         return overview;
     }
 
@@ -65,7 +68,7 @@ public class Movie implements Serializable {
         return date;
     }
 
-    public String getYear() {
+    public static String getYear() {
         String[] date = getDate().split("-");
         return date[0];
     }
@@ -122,8 +125,6 @@ public class Movie implements Serializable {
                 '}';
     }
 
-
-//review
 
     public ArrayList<Review> getReviews() {
         return reviews;
