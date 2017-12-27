@@ -15,7 +15,7 @@ import br.com.thaislisboa.popularmovies.domain.model.Movie;
 
 import static br.com.thaislisboa.popularmovies.domain.data.Constantes.TASKS;
 
-public class TaskContentProvider extends ContentProvider {
+public class FavoriteContentProvider extends ContentProvider {
 
     public static final int FAVORITES = 100;
     public static final int TASK_WITH_ID = 101;
@@ -27,8 +27,8 @@ public class TaskContentProvider extends ContentProvider {
     public static UriMatcher buildUriMatcher() {
         UriMatcher uriMatcher = new UriMatcher(UriMatcher.NO_MATCH);
 
-        uriMatcher.addURI(TaskContract.AUTHORITY, TaskContract.PATH_FAVORITE, FAVORITES);
-        uriMatcher.addURI(TaskContract.AUTHORITY, TaskContract.PATH_FAVORITE + "/#", TASK_WITH_ID);
+        uriMatcher.addURI(FavoriteContract.AUTHORITY, FavoriteContract.PATH_FAVORITE, FAVORITES);
+        uriMatcher.addURI(FavoriteContract.AUTHORITY, FavoriteContract.PATH_FAVORITE + "/#", TASK_WITH_ID);
 
         return uriMatcher;
 
