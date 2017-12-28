@@ -10,7 +10,6 @@ import java.util.ArrayList;
 import br.com.thaislisboa.popularmovies.domain.data.FavoriteContract;
 import br.com.thaislisboa.popularmovies.domain.model.Movie;
 
-import static br.com.thaislisboa.popularmovies.domain.model.Movie.getOverview;
 
 public class FavoriteListDao extends Dao {
 
@@ -25,11 +24,11 @@ public class FavoriteListDao extends Dao {
         //
         ContentValues cv = new ContentValues();
         cv.put(FavoriteContract.FavoriteContractEntry.COLUMN_ID_MOVIE, movie.getId());
-        cv.put(FavoriteContract.FavoriteContractEntry.COLUMN_TITLE, Movie.getTitle());
-        cv.put(FavoriteContract.FavoriteContractEntry.COLUMN_POSER, Movie.getPoster());
-        cv.put(FavoriteContract.FavoriteContractEntry.COLUMN_YEAR, Movie.getYear());
-        cv.put(FavoriteContract.FavoriteContractEntry.COLUMN_GRADE, Movie.getGrade());
-        cv.put(FavoriteContract.FavoriteContractEntry.COLUMN_OVERVIEW, getOverview());
+        cv.put(FavoriteContract.FavoriteContractEntry.COLUMN_TITLE, movie.getTitle());
+        cv.put(FavoriteContract.FavoriteContractEntry.COLUMN_POSER, movie.getPoster());
+        cv.put(FavoriteContract.FavoriteContractEntry.COLUMN_YEAR, movie.getYear());
+        cv.put(FavoriteContract.FavoriteContractEntry.COLUMN_GRADE, movie.getGrade());
+        cv.put(FavoriteContract.FavoriteContractEntry.COLUMN_OVERVIEW, movie.getOverview());
         // cv.put(VersaoServidor.ID, versaoServidor.getId());
         //
         db.insert(FavoriteContract.FavoriteContractEntry.TABLE_NAME, null, cv);
@@ -52,13 +51,13 @@ public class FavoriteListDao extends Dao {
             cursor = db.rawQuery(sb.toString().toLowerCase(), null);
             int i = 0;
             while (cursor.moveToNext()) {
-                Movie movie = new Movie(
-                        cursor.getString(cursor.getColumnIndex(FavoriteContract.FavoriteContractEntry.COLUMN_ID_MOVIE));
-                        cursor.getString(cursor.getColumnIndex(FavoriteContract.FavoriteContractEntry.COLUMN_TITLE));
-                        cursor.getString(cursor.getColumnIndex(FavoriteContract.FavoriteContractEntry.COLUMN_POSER));
-                        cursor.getString(cursor.getColumnIndex(FavoriteContract.FavoriteContractEntry.COLUMN_YEAR));
-                        cursor.getString(cursor.getColumnIndex(FavoriteContract.FavoriteContractEntry.COLUMN_GRADE));
-                        cursor.getString(cursor.getColumnIndex(FavoriteContract.FavoriteContractEntry.COLUMN_OVERVIEW));
+                Movie movie = new Movie();
+                        /*cursor.getString(cursor.getColumnIndex(FavoriteContract.FavoriteContractEntry.COLUMN_ID_MOVIE)),
+                cursor.getString(cursor.getColumnIndex(FavoriteContract.FavoriteContractEntry.COLUMN_TITLE)),
+                cursor.getString(cursor.getColumnIndex(FavoriteContract.FavoriteContractEntry.COLUMN_POSER)),
+                cursor.getString(cursor.getColumnIndex(FavoriteContract.FavoriteContractEntry.COLUMN_YEAR)),
+                cursor.getString(cursor.getColumnIndex(FavoriteContract.FavoriteContractEntry.COLUMN_GRADE)),
+                cursor.getString(cursor.getColumnIndex(FavoriteContract.FavoriteContractEntry.COLUMN_OVERVIEW)));*/
 
                 i++;
 
