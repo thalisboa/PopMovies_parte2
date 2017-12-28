@@ -53,15 +53,15 @@ public class Movie implements Serializable {
         return voteAverage;
     }
 
-    public static String getGrade() {
+    public  String getGrade() {
         return String.format("%s/10", getVoteAverage());
     }
 
-    public static String getTitle() {
+    public String getTitle() {
         return title;
     }
 
-    public static String getPoster() {
+    public  String getPoster() {
         return "http://image.tmdb.org/t/p/w780/".concat(poster);
     }
 
@@ -69,7 +69,7 @@ public class Movie implements Serializable {
         return "http://image.tmdb.org/t/p/w342/".concat(backdrop);
     }
 
-    public static String getOverview() {
+    public  String getOverview() {
         return overview;
     }
 
@@ -77,7 +77,7 @@ public class Movie implements Serializable {
         return date;
     }
 
-    public static String getYear() {
+    public  String getYear() {
         String[] date = getDate().split("-");
         return date[0];
     }
