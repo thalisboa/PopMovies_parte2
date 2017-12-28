@@ -12,7 +12,6 @@ import android.support.annotation.Nullable;
 
 import br.com.thaislisboa.popularmovies.domain.model.Movie;
 
-
 import static br.com.thaislisboa.popularmovies.domain.data.Constantes.TASKS;
 
 public class FavoriteContentProvider extends ContentProvider {
